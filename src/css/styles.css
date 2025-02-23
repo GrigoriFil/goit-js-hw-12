@@ -75,3 +75,27 @@ header button:hover {
     margin-top: 1rem;
     text-align: center;
 }
+
+#load-more {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #4169E1;
+    color: white;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#load-more:hover {
+    background-color: #365ABD;
+    transform: scale(1.05);
+}
+
+#load-more:active {
+    background-color: #2C4FA0;
+    transform: scale(0.98);
+}

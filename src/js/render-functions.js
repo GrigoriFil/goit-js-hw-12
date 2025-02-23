@@ -1,9 +1,12 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-export function renderImages(images) {
+export function renderImages(images, append = false) {
     const gallery = document.querySelector('.gallery');
-    gallery.innerHTML = '';
+
+    if (!append) {
+        gallery.innerHTML = '';
+    }
 
     const markup = images.map(({ webformatURL, largeImageURL, tags, likes, views, comments, downloads }) => `
         <div class="image-item">
@@ -31,11 +34,14 @@ export function showError(message) {
 }
 
 export function showLoader() {
-    const loader = document.querySelector('#loader');
-    loader.style.display = 'block';
+    document.querySelector('#loader').style.display = 'block';
 }
 
 export function hideLoader() {
-    const loader = document.querySelector('#loader');
-    loader.style.display = 'none';
+    document.querySelector('#loader').style.display = 'none';
+}
+
+export function toggleLoadMore(show) {
+    const loadMoreBtn = document.querySelector('#load-more');
+    loadMoreBtn.style.display = show ? 'block' : 'none';
 }
