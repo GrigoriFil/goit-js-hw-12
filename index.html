@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="uk">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image gallery</title>
+  <script type="module" crossorigin src="/goit-js-hw-12/index.js"></script>
+  <link rel="modulepreload" crossorigin href="/goit-js-hw-12/assets/vendor-tnUJPedx.js">
+  <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/vendor-CWKLx11g.css">
+  <link rel="stylesheet" crossorigin href="/goit-js-hw-12/assets/index-CfmBJauJ.css">
+</head>
+
+<body>
+    <header>
+        <h1>Search images</h1>
+        <form id="search-form">
+            <input type="text" id="search" placeholder="Search images..." required>
+            <button type="submit">Search</button>
+        </form>
+    </header>
+    <main>
+        <div class="gallery"></div>
+        <div class="loader" id="loader"></div>
+        <div class="error-message" id="error-message">
+            <p>Sorry, there are no images matching your search query. Please, try again!</p>
+        </div>
+    </main>
+</body>
+
+</html>
