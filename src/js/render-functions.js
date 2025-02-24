@@ -1,9 +1,10 @@
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-export function renderImages(images, append = false) {
-    const gallery = document.querySelector('.gallery');
+const gallery = document.querySelector('.gallery');
+const lightbox = new SimpleLightbox('.gallery a', { captionsData: 'alt', captionDelay: 250 });
 
+export function renderImages(images, append = false) {
     if (!append) {
         gallery.innerHTML = '';
     }
@@ -24,24 +25,34 @@ export function renderImages(images, append = false) {
 
     gallery.insertAdjacentHTML('beforeend', markup);
 
-    new SimpleLightbox('.gallery a').refresh();
+    lightbox.refresh();
 }
 
 export function showError(message) {
     const errorMessage = document.querySelector('.error-message');
-    errorMessage.textContent = message;
-    errorMessage.style.display = 'block';
+    if (errorMessage) {
+        errorMessage.textContent = message;
+        errorMessage.style.display = 'block';
+    }
 }
 
 export function showLoader() {
-    document.querySelector('#loader').style.display = 'block';
+    const loader = document.querySelector('#loader');
+    if (loader) {
+        loader.style.display = 'block';
+    }
 }
 
 export function hideLoader() {
-    document.querySelector('#loader').style.display = 'none';
+    const loader = document.querySelector('#loader');
+    if (loader) {
+        loader.style.display = 'none';
+    }
 }
 
 export function toggleLoadMore(show) {
     const loadMoreBtn = document.querySelector('#load-more');
-    loadMoreBtn.style.display = show ? 'block' : 'none';
+    if (loadMoreBtn) {
+        loadMoreBtn.style.display = show ? 'block' : 'none';
+    }
 }
